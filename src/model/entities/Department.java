@@ -1,20 +1,23 @@
 package model.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Department implements Serializable {
-
+public class Department implements Serializable{	
 	private static final long serialVersionUID = 1L;
-
+	
 	private Integer id;
 	private String name;
 	
+	List<Seller> sellers = new ArrayList<>();
+	
 	public Department() {
 	}
-
+	
 	public Department(Integer id, String name) {
 		this.id = id;
-		this.name = name;
+		this.name = name;		
 	}
 
 	public Integer getId() {
@@ -32,6 +35,10 @@ public class Department implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public List<Seller> getSellers() {
+		return sellers;
+	}	
 
 	@Override
 	public int hashCode() {
@@ -58,8 +65,13 @@ public class Department implements Serializable {
 		return true;
 	}
 
-	@Override
 	public String toString() {
 		return "Department [id=" + id + ", name=" + name + "]";
 	}
+	
+	
+	
+	
+	
+	
 }
